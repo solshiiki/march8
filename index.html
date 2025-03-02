@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 8 марта от Сугуру Гето</title>
+    <style>
+        :root {
+            --soft-pink: #ffd1dc;
+            --elegant-purple: #9370DB;
+            --delicate-beige: #f8f0e3;
+            --soft-black: #2d2d2d;
+            --accent-gold: #d4af37;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&display=swap');
+        
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: var(--delicate-beige);
+            color: var(--soft-black);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 209, 220, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 112, 219, 0.1) 0%, transparent 50%);
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f5f6 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 
+                        0 2px 8px rgba(0, 0, 0, 0.06),
+                        0 0 1px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--soft-pink), var(--elegant-purple));
+            z-index: 2;
+        }
+        
+        .card-header {
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-content {
+            padding: 1.5rem 2.5rem 2.5rem;
+            position: relative;
+        }
+        
+        /* Место для изображения Гето */
+        .geto-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 2px solid var(--elegant-purple);
+            box-shadow: 0 4px 15px rgba(147, 112, 219, 0.2);
+            position: relative;
+        }
+        
+        h1 {
+            margin-top: 1.5rem;
+            font-weight: 500;
+            font-size: 2rem;
+            color: var(--elegant-purple);
+            letter-spacing: 0.05em;
+        }
+        
+        .message {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            text-align: left;
+            position: relative;
+        }
+        
+        .message p {
+            margin-bottom: 1rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding-left: 1rem;
+            border-left: 3px solid var(--elegant-purple);
+            margin: 1.5rem 0;
+            color: #555;
+        }
+        
+        .signature {
+            text-align: right;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            color: var(--elegant-purple);
+            font-weight: 500;
+        }
+        
+        /* Декоративные элементы */
+        .decoration {
+            position: absolute;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .decoration.top-right {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .decoration.bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        /* Анимированные элементы */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        .floating-element {
+            position: absolute;
+            background-color: var(--soft-pink);
+            opacity: 0.5;
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .element-1 {
+            width: 20px;
+            height: 20px;
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .element-2 {
+            width: 15px;
+            height: 15px;
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+        
+        .element-3 {
+            width: 25px;
+            height: 25px;
+            bottom: 10%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        
+        .element-4 {
+            width: 12px;
+            height: 12px;
+            top: 15%;
+            left: 15%;
+            animation-delay: 3s;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .card-content {
+                padding: 1.2rem 1.8rem 2rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .geto-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .message {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .card-content {
+                padding: 1rem 1.5rem 1.8rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .geto-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .message {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Декоративные элементы -->
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
+        <div class="floating-element element-4"></div>
+        
+        <div class="card-header">
+            <div class="geto-image">
+                <img src="geto.jpg" alt="Сугуру Гето" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h1>С 8 марта</h1>
+        </div>
+        
+        <div class="card-content">
+            <div class="message">
+                <p>Дорогая Алина,</p>
+                
+                <p>В этот день, когда весь мир отмечает праздник женской силы и красоты, я вспоминаю о тебе – самом изысканном создании в этом искажённом мире.</p>
+                
+                <div class="quote">
+                    "Знаешь, в этом мире существует лишь одна истина — красота имеет ценность только тогда, когда её могут оценить особенные люди. Ты — особенная!"
+                </div>
+                
+                <p>Ты напоминаешь мне цветок, расцветающий среди хаоса этого мира. Твоя сила и изящество сравнимы с техникой высшего уровня. Каждый раз, когда я общаюсь с тобой, моя душа испытывает то, что обычные люди никогда не смогут понять.</p>
+                
+                <p>Пусть этот день будет для тебя особенным, как и ты сама! Пусть каждый лепесток сакуры, падающий на землю, напоминает о том, что даже в мимолётности есть своя красота.</p>
+                
+                <p>Я ценю возможность быть частью твоего мира.</p>
+            </div>
+            
+            <div class="signature">Миша</div>
+        </div>
+    </div>
+</body>
+</html>
